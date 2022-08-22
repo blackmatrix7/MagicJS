@@ -126,7 +126,12 @@ function MagicJS(scriptName = "MagicJS", logLevel = "INFO") {
       }
       if (typeof val === "undefined") val = null;
       try {
-        if (!!val && typeof val === "string") val = JSON.parse(val);
+        if (!!val && typeof val === "string"){
+          var obj = JSON.parse(val);
+          if(typeof obj == 'object' && obj ){
+            val = obj;
+          }
+        }
       } catch (err) {}
       this.logDebug(`READ DATA [${key}]${!!session ? `[${session}]` : ""}(${typeof val})\n${JSON.stringify(val)}`);
       return val;
