@@ -2,7 +2,7 @@ function MagicJS(scriptName = "MagicJS", logLevel = "INFO") {
   return new (class {
     constructor() {
       this._startTime = Date.now();
-      this.version = "2.2.3.6";
+      this.version = "2.2.3.7";
       this.scriptName = scriptName;
       this.logLevels = { DEBUG: 5, INFO: 4, NOTIFY: 3, WARNING: 2, ERROR: 1, CRITICAL: 0, NONE: -1 };
       this.isLoon = typeof $loon !== "undefined";
