@@ -356,7 +356,7 @@ function MagicJS(scriptName = "MagicJS", logLevel = "INFO") {
       }
 
       // 自动补完User-Agent，减少请求特征
-      if (!!!_options.headers || typeof _options.headers !== "object" || !!!_options.headers["User-Agent"]) {
+      if (!!!_options.headers || typeof _options.headers !== "object" || !!!_options.headers["User-Agent"] || !!!_options.headers["user-agent"]) {
         if (!!!_options.headers || typeof _options.headers !== "object") _options.headers = {};
         if (this.isNode) _options.headers["User-Agent"] = this.pcUserAgent;
         else _options.headers["User-Agent"] = this.iOSUserAgent;
